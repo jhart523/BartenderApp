@@ -1,0 +1,34 @@
+﻿@model IEnumerable<BartenderApp.Models.Cocktail>
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome to the Bartender App</h1>
+
+    <div>
+        <h2>Menu</h2>
+        <table class="bg-success table-striped">
+            <thead>
+                <th>Name</th>
+                <th style="width:200px">Description</th>
+                <th>Price</th>
+            </thead>
+            <tbody>
+                @foreach(var x in Model)
+                {
+                    <tr>
+                        <td>@x.Name</td>
+                        <td>@x.Description</td>
+                        <td>@x.Price</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+
+
+
+    </div>
+</div>
