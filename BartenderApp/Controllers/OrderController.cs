@@ -76,5 +76,18 @@ namespace BartenderApp.Controllers
 
             return View(order);
         }
+
+        public async Task<IActionResult> DeleteOrder(int orderId)
+        {
+            var order = _context.Orders.Find(orderId);
+
+            if(order == null)
+            {
+                return NotFound();
+            }
+            _context.Orders.Remove(order);
+            await _context.SaveChangesAsync();
+            return RedirectToAction("Index");
+        }
     }
 }

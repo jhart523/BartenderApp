@@ -28,6 +28,10 @@
                         <button type="submit" class="btn btn-success">Mark as Ready</button>
                     </form>
                 }
+                <form asp-action="DeleteOrder" asp-controller="Order" method="post">
+                    <input type="hidden" name="orderId" value="@order.Id" />
+                    <button type="submit" class="btn btn-info">Remove Order</button>
+                </form>
             </td>
         </tr>
     }
