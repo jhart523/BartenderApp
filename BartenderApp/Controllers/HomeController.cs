@@ -1,6 +1,7 @@
 using BartenderApp.Data;
 using BartenderApp.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System.Diagnostics;
 
 namespace BartenderApp.Controllers
@@ -8,19 +9,19 @@ namespace BartenderApp.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-        private ICocktailRepository repo;
+        private readonly ApplicationDbContext _context;
 
-        public HomeController (ICocktailRepository cocktailRepo)
+        public HomeController (ApplicationDbContext context)
         {
-            repo = cocktailRepo;
+            _context = context;
         }
 
 
         
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            var menu = repo.GetAll();
+            var menu = await _context.Cocktails.ToListAsync();
             return View(menu);
         }
 

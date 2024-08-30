@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "uUruHz1R5RwcS2qg4CaRBif0AJ0Qv/WN2VTk7WaMGFo=",
+  "Hash": "DMD6rlsNcD6opcx+XrEyukOk/j2PVkKa6texMYuPrcM=",
   "Source": "BartenderApp",
   "BasePath": "_content/BartenderApp",
   "Mode": "Default",
@@ -53,6 +53,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "D:\\Users\\hartl\\source\\repos\\BartenderApp\\BartenderApp\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\BartenderApp.bundle.scp.css"
+    },
+    {
+      "Identity": "D:\\Users\\hartl\\source\\repos\\BartenderApp\\BartenderApp\\wwwroot\\css\\bootswatchTheme.css",
+      "SourceId": "BartenderApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Users\\hartl\\source\\repos\\BartenderApp\\BartenderApp\\wwwroot\\",
+      "BasePath": "_content/BartenderApp",
+      "RelativePath": "css/bootswatchTheme.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\bootswatchTheme.css"
     },
     {
       "Identity": "D:\\Users\\hartl\\source\\repos\\BartenderApp\\BartenderApp\\wwwroot\\css\\site.css",

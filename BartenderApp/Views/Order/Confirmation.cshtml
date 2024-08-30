@@ -1,0 +1,9 @@
+﻿@model BartenderApp.Models.Order
+
+<div class="text-center">
+    <h1 class="display-4">Order Confirmation</h1>
+    <p>Thank you, @Model.CustomerName! Your order for @Model.Cocktail.Name has been placed.</p>
+    <p>Total: @Model.OrderPrice.ToString("C")</p>
+
+    <a asp-action="Index" asp-controller="Home" class="btn btn-primary mt-3">Back to Menu</a>
+</div>

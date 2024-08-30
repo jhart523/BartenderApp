@@ -1,34 +1,65 @@
 ﻿@model IEnumerable<BartenderApp.Models.Cocktail>
 
 @{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Menu";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome to the Bartender App</h1>
 
-    <div>
-        <h2>Menu</h2>
-        <table class="bg-success table-striped">
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+
+    
+        <h2 class="text-center">Menu</h2>
+        <table class="bg-light table-bordered table-hover bg-light">
             <thead>
                 <th>Name</th>
-                <th style="width:200px">Description</th>
+                <th>Ingredients</th>
                 <th>Price</th>
             </thead>
             <tbody>
-                @foreach(var x in Model)
+                @foreach(var cocktail in Model)
                 {
                     <tr>
-                        <td>@x.Name</td>
-                        <td>@x.Description</td>
-                        <td>@x.Price</td>
+                        <td>@cocktail.Name</td>
+                        <td>@cocktail.Ingredients</td>
+                        <td>@cocktail.Price.ToString("C")</td>                      
                     </tr>
                 }
             </tbody>
         </table>
+    </div>
 
+    <div class="col-md-6">
+        <h2 class="text-center">Place your Order</h2>
+        <form asp-action="CreateOrder" asp-controller="Order" method="post">
+            <div class="form-group">
+                <label for="customerName">Enter your name</label>
+                <input type="text" name="customerName" class="form-control" placeholder="Enter your name here.." required/>
+            </div>
 
-
+            <div class="form-group">
+                <label for="cocktailId">Select a drink:</label>
+                <select name="cocktailId" class="form-control" required>
+                    <option value="">Select a drink</option>
+                    @foreach(var cocktail in Model)
+                    {
+                        <option value="@cocktail.Id">@cocktail.Name</option>
+                    }
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary mt-2">Order</button>
+        </form>
 
     </div>
+    
+    <div class="row my-5">
+        <div class="col text-center">
+            <h3 class="text-center mb-3">Bartender Order Queue</h3>
+            <a asp-action="Index" asp-controller="Order" class="btn btn-lg btn-primary">View Order Queue</a>
+        </div>
+    </div>
+
 </div>
+
+

@@ -1,12 +1,15 @@
 using BartenderApp.Data;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(
+    builder.Configuration.GetConnectionString("DefaultConnection")
+    ));
 
-// Register repos with DI container
-builder.Services.AddScoped<ICocktailRepository,FakeCocktailRepository>();
+
 
 
 var app = builder.Build();
